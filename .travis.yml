@@ -1,4 +1,4 @@
 language: java
 jdk: oraclejdk7
 install:
-  travis/install.sh
+  - sudo travis/install.sh
