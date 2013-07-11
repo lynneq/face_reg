@@ -1,4 +1,4 @@
 language: java
 jdk: oraclejdk7
-before_script:
-  - sudo git submodule foreach git pull origin master
+install:
+  travis/install.sh
