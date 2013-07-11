@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
+echo "start install ....."
 set -e
 PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 cd $PROJECT_ROOT
+echo "start apt-get update ....."
 
 sudo apt-get update -qq
 if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
@@ -15,3 +17,4 @@ cp vendor/gms-mvn/gms-mvn-install.sh android-sdk-linux/extras/google/google_play
 (cd android-sdk-linux/extras/google/google_play_services/libproject/google-play-services_lib/ && ./gms-mvn-install.sh 7)
 echo no | android create avd -n emulator -t android-17 --skin WVGA800 --force --abi armeabi-v7a
 gem install calabash-android
+echo "end....."
