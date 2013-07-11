@@ -1,4 +1,4 @@
-nguage: ruby
-rvm: "1.9.3"
+language: java
+jdk: oraclejdk7
 
 git submodule init
