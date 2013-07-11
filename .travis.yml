@@ -1,4 +1,4 @@
 language: java
 jdk: oraclejdk7
-
-git submodule init
+before_script:
+	- git submodule init
