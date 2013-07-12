@@ -3,9 +3,13 @@ echo "start install ....."
 set -e
 PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 cd $PROJECT_ROOT
+echo $PROJECT_ROOT
+echo `pwd`
 echo "start apt-get update ....."
 
 sudo apt-get update -qq
+
+echo "after apt-get update ....."
 if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
 wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
 tar -xzf android-sdk_r21.0.1-linux.tgz
